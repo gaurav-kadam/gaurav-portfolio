@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --color-background: 7 10 18;
+  --color-foreground: 243 247 255;
+  --color-muted: 145 161 185;
+  --color-accent: 83 214 255;
+  --color-secondary: 103 255 196;
+  --color-border: 142 162 196;
+  --color-surface: 16 24 40;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  color-scheme: light;
+  --color-background: 241 245 252;
+  --color-foreground: 11 18 32;
+  --color-muted: 87 100 122;
+  --color-accent: 0 143 255;
+  --color-secondary: 0 181 132;
+  --color-border: 180 194 215;
+  --color-surface: 255 255 255;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(0, 143, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 85% 15%, rgba(47, 214, 173, 0.14), transparent 22%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(83, 214, 255, 0.28);
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-card {
+    @apply border border-border/20 bg-surface/60 shadow-card backdrop-blur-xl;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl;
+  }
+
+  .section-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.35em] text-accent;
+  }
+
+  .body-copy {
+    @apply text-sm leading-7 text-muted sm:text-base;
+  }
+
+  .pill {
+    @apply inline-flex items-center rounded-full border border-border/20 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-foreground/80;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-secondary px-6 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:scale-[1.02] hover:shadow-glow;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-border/25 bg-white/5 px-6 py-3 text-sm font-semibold text-foreground transition duration-300 hover:border-accent/50 hover:bg-white/10;
+  }
+
+  .mesh-panel {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 38px 38px;
+  }
+}
