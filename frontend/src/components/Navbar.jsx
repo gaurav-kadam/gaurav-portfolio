@@ -2,16 +2,8 @@ import { useEffect, useEffectEvent, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiBars3, HiMiniMoon, HiMiniSun, HiXMark } from "react-icons/hi2";
+import { navItems } from "../services/api";
 
-
-const navItems = [
-  { id: "home", label: "Home", href: "/#home" },
-  { id: "about", label: "About", href: "/#about" },
-  { id: "skills", label: "Skills", href: "/#skills" },
-  { id: "projects", label: "Projects", href: "/#projects" },
-  { id: "experience", label: "Experience", href: "/#experience" },
-  { id: "contact", label: "Contact", href: "/#contact" },
-];
 
 
 function Navbar({ activeSection, darkMode, onToggleTheme }) {

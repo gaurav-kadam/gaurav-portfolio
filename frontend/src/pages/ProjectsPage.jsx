@@ -10,6 +10,7 @@ import {
   fallbackProjects,
   fetchProfile,
   fetchProjects,
+  projectsPageData,
 } from "../services/api";
 
 
@@ -72,9 +73,9 @@ function ProjectsPage({ onSectionChange }) {
       <section className="section-shell pb-10">
         <div className="glass-card rounded-[2.5rem] p-6 sm:p-8">
           <SectionHeading
-            eyebrow="Projects Archive"
-            title="A broader look at the systems and interfaces I build."
-            description="Explore the project catalog with a searchable view designed to highlight product thinking, technology choices, and implementation quality."
+            eyebrow={projectsPageData.eyebrow}
+            title={projectsPageData.title}
+            description={projectsPageData.description}
           />
           <div className="mt-8 max-w-xl">
             <label className="flex items-center gap-3 rounded-full border border-border/20 bg-white/5 px-5 py-4">
@@ -85,7 +86,7 @@ function ProjectsPage({ onSectionChange }) {
                 onChange={(event) =>
                   startTransition(() => setQuery(event.target.value))
                 }
-                placeholder="Search by title, description, or technology"
+                placeholder={projectsPageData.searchPlaceholder}
                 className="w-full bg-transparent outline-none placeholder:text-muted"
               />
             </label>
@@ -113,7 +114,7 @@ function ProjectsPage({ onSectionChange }) {
               >
                 <div className="rounded-[1.7rem] border border-border/15 bg-gradient-to-br from-accent/15 via-white/5 to-secondary/10 p-6">
                   <p className="text-xs uppercase tracking-[0.28em] text-muted">
-                    Featured Case
+                    {projectsPageData.featuredLabel}
                   </p>
                   <h3 className="mt-3 font-display text-3xl font-semibold">
                     {project.title}

@@ -1,33 +1,12 @@
 import { motion } from "framer-motion";
+import { experienceData } from "../services/api";
 
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import SectionHeading from "./SectionHeading";
 import { fadeInUp, staggerContainer } from "../animations/scrollAnimations";
 
 
-const timeline = [
-  {
-    title: "Full Stack Developer",
-    company: "Independent Projects",
-    duration: "2024 - Present",
-    description:
-      "Designing premium web experiences, API-driven platforms, and deployment-ready applications with a strong focus on responsive UI and maintainable architecture.",
-  },
-  {
-    title: "Backend Engineer",
-    company: "Scalable Web Systems",
-    duration: "2023 - 2024",
-    description:
-      "Built REST APIs, data models, and operational backend workflows with Django, PostgreSQL, and clean modular service boundaries.",
-  },
-  {
-    title: "Frontend Developer",
-    company: "Modern Product Interfaces",
-    duration: "2022 - 2023",
-    description:
-      "Delivered polished component systems, motion-rich landing pages, and responsive dashboards centered around real product usability.",
-  },
-];
+const timeline = experienceData.timeline;
 
 
 function Experience() {
@@ -42,9 +21,9 @@ function Experience() {
         animate={isInView ? "visible" : "hidden"}
       >
         <SectionHeading
-          eyebrow="Experience"
-          title="A timeline shaped by building and shipping."
-          description="A development journey centered on production-focused engineering, thoughtful interface design, and scalable implementation."
+          eyebrow={experienceData.eyebrow}
+          title={experienceData.title}
+          description={experienceData.description}
         />
 
         <div className="relative mt-14 pl-6 sm:pl-10">

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { HiArrowDownTray, HiArrowRight } from "react-icons/hi2";
 
 import profilePlaceholder from "../assets/images/profile-placeholder.svg";
+import { heroData } from "../services/api";
 import {
   fadeInUp,
   slideInLeft,
@@ -11,8 +12,7 @@ import {
 } from "../animations/scrollAnimations";
 
 
-const technologies = ["React", "Django", "PostgreSQL", "JavaScript"];
-
+const technologies = heroData.technologies;
 
 function Hero({ profile }) {
   const { scrollY } = useScroll();
@@ -55,7 +55,7 @@ function Hero({ profile }) {
           animate="visible"
         >
           <motion.div variants={slideInLeft}>
-            <span className="pill">Premium Full Stack Portfolio</span>
+            <span className="pill">{heroData.eyebrow}</span>
             <h1 className="mt-8 font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl lg:text-7xl">
               {profile.name}
             </h1>
@@ -63,7 +63,7 @@ function Hero({ profile }) {
               {profile.title}
             </p>
             <p className="body-copy mt-4 max-w-2xl">
-              I build scalable web applications and modern digital experiences.
+              {heroData.description}
             </p>
 
             <div className="mt-8 flex min-h-[3.5rem] items-center gap-3">
@@ -95,11 +95,7 @@ function Hero({ profile }) {
               className="mt-12 grid gap-4 sm:grid-cols-3"
               variants={staggerContainer}
             >
-              {[
-                { label: "Experience Style", value: "Full Stack" },
-                { label: "Core Stack", value: "React + Django" },
-                { label: "Database Focus", value: "PostgreSQL" },
-              ].map((item) => (
+              {heroData.highlights.map((item) => (
                 <motion.div
                   key={item.label}
                   className="glass-card rounded-[1.6rem] p-5"

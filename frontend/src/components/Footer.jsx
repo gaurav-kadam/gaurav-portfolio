@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { footerData } from "../services/api";
 
 
 function Footer({ profile }) {
@@ -10,7 +11,7 @@ function Footer({ profile }) {
             {profile?.name || "Gaurav Ravindra Kadam"}
           </p>
           <p className="mt-2 text-sm text-muted">
-            Copyright © 2026. Crafted for a premium developer presence.
+            {footerData.copyright}
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -24,7 +25,7 @@ function Footer({ profile }) {
             <FaGithub />
           </a>
           <a
-            href={profile?.linkedin || "https://www.linkedin.com/in/gaurav-kadam-286b37283/"}
+            href={profile?.linkedin || "https://www.linkedin.com/in/gaurav-kadam6026-286b37283/"}
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"
@@ -33,7 +34,7 @@ function Footer({ profile }) {
             <FaLinkedinIn />
           </a>
           <a
-            href="https://twitter.com/gauravkadam"
+            href={footerData.twitter}
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"

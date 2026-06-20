@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { aboutData } from "../services/api";
 
 import developerIllustration from "../assets/images/developer-illustration.svg";
 import useScrollAnimation from "../hooks/useScrollAnimation";
@@ -11,23 +12,7 @@ import {
 } from "../animations/scrollAnimations";
 
 
-const aboutCards = [
-  {
-    title: "Education",
-    content:
-      "Strong self-driven learning approach with consistent focus on modern frontend engineering, backend architecture, and cloud-ready delivery.",
-  },
-  {
-    title: "Career Goals",
-    content:
-      "To contribute to product teams that value thoughtful user experience, high-quality engineering practices, and scalable system design.",
-  },
-  {
-    title: "Developer Philosophy",
-    content:
-      "Build with clarity, ship with intention, and create interfaces that feel elegant while remaining practical and maintainable.",
-  },
-];
+const aboutCards = aboutData.cards;
 
 
 function About() {
@@ -43,9 +28,9 @@ function About() {
       >
         <motion.div variants={slideInLeft}>
           <SectionHeading
-            eyebrow="About Me"
-            title="Building products that feel polished at every layer."
-            description="Gaurav Ravindra Kadam is a passionate full stack developer focused on building scalable backend systems and modern responsive web applications."
+            eyebrow={aboutData.eyebrow}
+            title={aboutData.title}
+            description={aboutData.description}
           />
           <div className="mt-10 grid gap-5">
             {aboutCards.map((card) => (

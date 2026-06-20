@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { HiArrowTopRightOnSquare, HiCodeBracket } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
+import { projectsSectionData } from "../services/api";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import SectionHeading from "./SectionHeading";
 import { fadeInUp, staggerContainer } from "../animations/scrollAnimations";
@@ -117,9 +118,9 @@ function Projects({ projects }) {
       >
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="Projects"
-            title="Selected work designed for scale and polish."
-            description="Every project is framed as a product experience, with attention to performance, architecture, and interface quality."
+            eyebrow={projectsSectionData.eyebrow}
+            title={projectsSectionData.title}
+            description={projectsSectionData.description}
           />
           <Link to="/projects" className="button-secondary w-fit">
             Explore All Projects

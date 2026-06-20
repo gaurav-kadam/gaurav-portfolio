@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiEnvelope, HiLink, HiPaperAirplane } from "react-icons/hi2";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
-import { submitContactMessage } from "../services/api";
+import { contactData, submitContactMessage } from "../services/api";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import SectionHeading from "./SectionHeading";
 import { fadeInUp, staggerContainer } from "../animations/scrollAnimations";
@@ -58,45 +58,43 @@ function Contact({ profile }) {
       >
         <motion.div variants={fadeInUp}>
           <SectionHeading
-            eyebrow="Contact"
-            title="Let’s build something modern, scalable, and memorable."
-            description="Reach out for full stack opportunities, product collaboration, or engineering work that needs both strong architecture and refined UI execution."
+            eyebrow={contactData.eyebrow}
+            title={contactData.title}
+            description={contactData.description}
           />
           <div className="mt-8 space-y-4">
-            <a
-              href={`mailto:${profile.email}`}
-              className="glass-card flex items-center gap-4 rounded-[1.75rem] p-5"
-            >
-              <HiEnvelope className="text-2xl text-accent" />
-              <div>
-                <p className="text-sm uppercase tracking-[0.25em] text-muted">Email</p>
-                <p className="mt-2">{profile.email}</p>
-              </div>
-            </a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="glass-card flex items-center gap-4 rounded-[1.75rem] p-5"
-            >
-              <FaGithub className="text-2xl text-accent" />
-              <div>
-                <p className="text-sm uppercase tracking-[0.25em] text-muted">GitHub</p>
-                <p className="mt-2">Open source work and repositories</p>
-              </div>
-            </a>
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="glass-card flex items-center gap-4 rounded-[1.75rem] p-5"
-            >
-              <FaLinkedinIn className="text-2xl text-accent" />
-              <div>
-                <p className="text-sm uppercase tracking-[0.25em] text-muted">LinkedIn</p>
-                <p className="mt-2">Professional experience and networking</p>
-              </div>
-            </a>
+            {contactData.links.map((link) => {
+              const href =
+                link.type === "email"
+                  ? `mailto:${profile.email}`
+                  : link.type === "github"
+                  ? profile.github
+                  : profile.linkedin;
+
+              return (
+                <a
+                  key={link.label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="glass-card flex items-center gap-4 rounded-[1.75rem] p-5"
+                >
+                  {link.type === "email" ? (
+                    <HiEnvelope className="text-2xl text-accent" />
+                  ) : link.type === "github" ? (
+                    <FaGithub className="text-2xl text-accent" />
+                  ) : (
+                    <FaLinkedinIn className="text-2xl text-accent" />
+                  )}
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.25em] text-muted">
+                      {link.label}
+                    </p>
+                    <p className="mt-2">{link.description}</p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </motion.div>
 
