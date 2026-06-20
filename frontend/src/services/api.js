@@ -7,10 +7,17 @@ export const navItems = data.navigation.items;
 export const heroData = data.hero;
 export const aboutData = data.about;
 export const experienceData = data.experience;
+export const certificationsData = data.certifications;
 export const projectsSectionData = data.projectsSection;
 export const projectsPageData = data.projectsPage;
 export const contactData = data.contact;
 export const footerData = data.footer;
+export const resumeData = {
+  file: data.profile.resume_file,
+  title: "Gaurav Ravindra Kadam Resume",
+  viewerPath: "/resume",
+  downloadName: "Gaurav_Ravindra_Kadam_Resume.docx",
+};
 
 export async function fetchProfile() {
   return data.profile;

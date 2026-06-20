@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { HiArrowDownTray, HiArrowRight } from "react-icons/hi2";
+import { Link } from "react-router-dom";
+import { HiArrowRight, HiDocumentText } from "react-icons/hi2";
 
 import profilePlaceholder from "../assets/images/profile-placeholder.svg";
-import { heroData } from "../services/api";
+import { heroData, resumeData } from "../services/api";
 import {
   fadeInUp,
   slideInLeft,
@@ -39,6 +40,14 @@ function Hero({ profile }) {
 
     return () => window.clearInterval(interval);
   }, [techIndex]);
+
+  const handleHireMe = () => {
+    const contactSection = document.getElementById("contact");
+    const firstField = contactSection?.querySelector("input, textarea, button");
+
+    contactSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.setTimeout(() => firstField?.focus({ preventScroll: true }), 450);
+  };
 
   return (
     <section
@@ -77,18 +86,23 @@ function Hero({ profile }) {
             </div>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="/#projects" className="button-primary">
-                View Projects
-                <HiArrowRight className="ml-2 text-base" />
-              </a>
-              <a
-                href={profile.resume_file || "/#contact"}
-                className="button-secondary"
-                download={Boolean(profile.resume_file)}
+              <button
+                type="button"
+                className="button-primary"
+                onClick={handleHireMe}
+                aria-label="Hire me and jump to the contact form"
               >
-                Download Resume
-                <HiArrowDownTray className="ml-2 text-base" />
-              </a>
+                Hire Me
+                <HiArrowRight className="ml-2 text-base" />
+              </button>
+              <Link
+                to={resumeData.viewerPath}
+                className="button-secondary"
+                aria-label="Open resume viewer"
+              >
+                View Resume
+                <HiDocumentText className="ml-2 text-base" />
+              </Link>
             </div>
 
             <motion.div

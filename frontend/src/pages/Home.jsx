@@ -2,6 +2,7 @@ import { useEffect, startTransition, useState } from "react";
 import { motion } from "framer-motion";
 
 import About from "../components/About";
+import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Footer from "../components/Footer";
@@ -125,6 +126,7 @@ function Home({ onSectionChange }) {
       <Skills skills={skills} />
       <Projects projects={projects} />
       <Experience />
+      <Certifications />
       <Contact profile={profile} />
       <Footer profile={profile} />
     </motion.main>

@@ -1,68 +1,96 @@
 {
   "profile": {
-    "name": "Gaurav Kadam",
-    "title": "Full Stack Developer",
-    "bio": "Gaurav Ravindra Kadam is a passionate full stack developer focused on building scalable backend systems and modern responsive web applications.",
+    "name": "Gaurav Ravindra Kadam",
+    "title": "Software Developer | Backend Developer | Java & Django Developer",
+    "bio": "Computer Science postgraduate student with hands-on experience in full-stack web and mobile application development using Django REST Framework, React.js, PostgreSQL, and AWS. Skilled in designing RESTful APIs, developing scalable backend systems, and managing relational and NoSQL databases. Strong foundation in Java, Python, C, and C++, with practical experience contributing to production-grade applications during industry training and internships. Passionate about Backend Development, Java Ecosystem technologies, Cloud Computing, and Software Engineering.",
     "profile_image": "",
-    "resume_file": "",
+    "resume_file": "/Gaurav_Kadam_Resume.docx",
     "email": "gauravkadam6026@gmail.com",
     "github": "https://github.com/gaurav-kadam",
-    "linkedin": "https://www.linkedin.com/in/gaurav-kadam6026-286b37283/"
+    "linkedin": "https://www.linkedin.com/in/gaurav-kadam-286b37283/"
   },
   "projects": [
     {
       "id": 1,
-      "title": "Portfolio Website",
-      "description": "A premium portfolio experience blending elegant motion, glassmorphism UI, and a Django-powered content API.",
-      "technologies": ["React", "Tailwind CSS", "Framer Motion", "Django REST"],
-      "github_link": "https://github.com/gaurav-kadam/portfolio",
-      "live_link": "https://gaurav-portfolio.example.com",
+      "title": "Kho-Kho Scoring System",
+      "description": "Developed and deployed a full-stack mobile-based Kho-Kho match management and scoring system with Django REST Framework APIs, PostgreSQL integration, umpire authentication, role-based access control, and backend services deployed on AWS.",
+      "technologies": ["Django", "Django REST Framework", "PostgreSQL", "AWS", "React Native"],
+      "github_link": "https://github.com/gaurav-kadam",
+      "github_label": "GitHub Profile",
+      "live_link": "",
       "image": ""
     },
     {
       "id": 2,
-      "title": "E-Commerce Platform",
-      "description": "A production-style commerce platform with fast storefront experiences, API-first architecture, and operational dashboards.",
-      "technologies": ["React", "Django", "PostgreSQL", "Stripe"],
-      "github_link": "https://github.com/gaurav-kadam/ecommerce-platform",
-      "live_link": "https://ecommerce.example.com",
+      "title": "Daily Collection Management System",
+      "description": "Developed a finance management web application for daily savings collection and loan tracking, including customer management, EMI tracking, reporting, payment modules, Firebase Firestore integration, Cloudinary media support, and a responsive user interface.",
+      "technologies": ["React.js", "Firebase Firestore", "Cloudinary", "JavaScript"],
+      "github_link": "https://github.com/gaurav-kadam/daily-collection",
+      "github_label": "GitHub",
+      "live_link": "",
       "image": ""
     },
     {
       "id": 3,
-      "title": "Student Management System",
-      "description": "A workflow-focused education management product that streamlines records, reporting, attendance, and communication.",
-      "technologies": ["React", "Django REST", "PostgreSQL", "Charts"],
-      "github_link": "https://github.com/gaurav-kadam/student-management-system",
-      "live_link": "https://student-hub.example.com",
-      "image": ""
-    },
-    {
-      "id": 4,
-      "title": "REST API Backend System",
-      "description": "A service-oriented backend foundation with modular endpoints, clean architecture, and deployment-ready practices.",
-      "technologies": ["Django REST", "Docker", "PostgreSQL", "AWS"],
-      "github_link": "https://github.com/gaurav-kadam/rest-api-backend",
-      "live_link": "https://api-suite.example.com",
+      "title": "AI-Based Digital Learning Platform",
+      "description": "Ongoing AI-powered educational platform for rural students featuring OCR-based syllabus extraction, multilingual content generation, personalized learning paths, and offline accessibility.",
+      "technologies": ["OCR", "AI", "React", "Python"],
+      "github_link": "https://github.com/gaurav-kadam",
+      "github_label": "GitHub Profile",
+      "live_link": "",
       "image": ""
     }
   ],
   "skills": [
-    { "id": 1, "category": "Frontend", "name": "HTML", "proficiency": 95 },
-    { "id": 2, "category": "Frontend", "name": "CSS", "proficiency": 92 },
-    { "id": 3, "category": "Frontend", "name": "JavaScript", "proficiency": 93 },
-    { "id": 4, "category": "Frontend", "name": "React", "proficiency": 94 },
-    { "id": 5, "category": "Frontend", "name": "Tailwind", "proficiency": 90 },
-    { "id": 6, "category": "Backend", "name": "Django", "proficiency": 95 },
-    { "id": 7, "category": "Backend", "name": "Node.js", "proficiency": 82 },
-    { "id": 8, "category": "Backend", "name": "REST APIs", "proficiency": 94 },
-    { "id": 9, "category": "Database", "name": "PostgreSQL", "proficiency": 90 },
-    { "id": 10, "category": "Database", "name": "MySQL", "proficiency": 84 },
-    { "id": 11, "category": "Tools", "name": "Git", "proficiency": 93 },
-    { "id": 12, "category": "Tools", "name": "GitHub", "proficiency": 92 },
-    { "id": 13, "category": "Tools", "name": "AWS", "proficiency": 78 },
-    { "id": 14, "category": "Tools", "name": "Docker", "proficiency": 85 }
+    { "id": 1, "category": "Programming Languages", "name": "Java", "proficiency": 90 },
+    { "id": 2, "category": "Programming Languages", "name": "Python", "proficiency": 88 },
+    { "id": 3, "category": "Programming Languages", "name": "C", "proficiency": 82 },
+    { "id": 4, "category": "Programming Languages", "name": "C++", "proficiency": 82 },
+    { "id": 5, "category": "Frontend", "name": "React.js", "proficiency": 88 },
+    { "id": 6, "category": "Frontend", "name": "JavaScript", "proficiency": 86 },
+    { "id": 7, "category": "Frontend", "name": "HTML5", "proficiency": 90 },
+    { "id": 8, "category": "Frontend", "name": "CSS3", "proficiency": 88 },
+    { "id": 9, "category": "Backend", "name": "Django", "proficiency": 90 },
+    { "id": 10, "category": "Backend", "name": "Django REST Framework", "proficiency": 90 },
+    { "id": 11, "category": "Backend", "name": "Spring Boot", "proficiency": 78 },
+    { "id": 12, "category": "Databases", "name": "PostgreSQL", "proficiency": 88 },
+    { "id": 13, "category": "Databases", "name": "MySQL", "proficiency": 82 },
+    { "id": 14, "category": "Databases", "name": "MongoDB", "proficiency": 78 },
+    { "id": 15, "category": "Databases", "name": "Firebase Firestore", "proficiency": 84 },
+    { "id": 16, "category": "Tools & Platforms", "name": "Git", "proficiency": 88 },
+    { "id": 17, "category": "Tools & Platforms", "name": "GitHub", "proficiency": 88 },
+    { "id": 18, "category": "Tools & Platforms", "name": "AWS", "proficiency": 80 },
+    { "id": 19, "category": "Tools & Platforms", "name": "Firebase", "proficiency": 84 },
+    { "id": 20, "category": "Tools & Platforms", "name": "Cloudinary", "proficiency": 80 },
+    { "id": 21, "category": "Tools & Platforms", "name": "VS Code", "proficiency": 90 }
   ],
+  "certifications": {
+    "eyebrow": "Certifications",
+    "title": "Applied learning across AI, content creation, and project delivery.",
+    "description": "Certifications that support practical software development, AI fluency, and professional project execution.",
+    "items": [
+      {
+        "title": "Generative AI in Action",
+        "issuer": "IBM SkillsBuild"
+      },
+      {
+        "title": "Artificial Intelligence Fundamentals",
+        "issuer": "IBM SkillsBuild"
+      },
+      {
+        "title": "Generative AI Content Creation",
+        "issuer": "Adobe (Coursera)"
+      },
+      {
+        "title": "Project Management Fundamentals",
+        "issuer": "IBM SkillsBuild"
+      },
+      {
+        "title": "Job Application Essentials",
+        "issuer": "IBM SkillsBuild"
+      }
+    ]
+  },
   "navigation": {
     "items": [
       { "id": "home", "label": "Home", "href": "/#home" },
@@ -70,87 +98,88 @@
       { "id": "skills", "label": "Skills", "href": "/#skills" },
       { "id": "projects", "label": "Projects", "href": "/#projects" },
       { "id": "experience", "label": "Experience", "href": "/#experience" },
+      { "id": "certifications", "label": "Certifications", "href": "/#certifications" },
       { "id": "contact", "label": "Contact", "href": "/#contact" }
     ]
   },
   "hero": {
-    "eyebrow": "Premium Full Stack Portfolio",
-    "description": "I build scalable web applications and modern digital experiences.",
-    "technologies": ["React", "Django", "PostgreSQL", "JavaScript"],
+    "eyebrow": "Software Developer Portfolio",
+    "description": "I build RESTful APIs, scalable backend systems, and responsive full-stack applications with Java, Django, React.js, PostgreSQL, and AWS.",
+    "technologies": ["Java", "Django REST Framework", "React.js", "PostgreSQL", "AWS"],
     "highlights": [
-      { "label": "Experience Style", "value": "Full Stack" },
-      { "label": "Core Stack", "value": "React + Django" },
-      { "label": "Database Focus", "value": "PostgreSQL" }
+      { "label": "Role Focus", "value": "Backend Developer" },
+      { "label": "Core Stack", "value": "Java + Django" },
+      { "label": "Cloud Focus", "value": "AWS" }
     ]
   },
   "about": {
     "eyebrow": "About Me",
-    "title": "Building products that feel polished at every layer.",
-    "description": "Gaurav Ravindra Kadam is a passionate full stack developer focused on building scalable backend systems and modern responsive web applications.",
+    "title": "Building scalable backend systems and practical full-stack products.",
+    "description": "Computer Science postgraduate student with hands-on experience across Django REST Framework, React.js, PostgreSQL, Firebase, and AWS. I focus on clean APIs, reliable data models, authentication workflows, and production-ready application features.",
     "cards": [
       {
         "title": "Education",
-        "content": "Strong self-driven learning approach with consistent focus on modern frontend engineering, backend architecture, and cloud-ready delivery."
+        "content": "Computer Science postgraduate student with a strong foundation in Java, Python, C, C++, databases, cloud computing, and software engineering fundamentals."
+      },
+      {
+        "title": "Backend Focus",
+        "content": "Experienced in developing REST APIs with Django REST Framework, designing PostgreSQL databases, implementing authentication, and building role-based access control."
       },
       {
         "title": "Career Goals",
-        "content": "To contribute to product teams that value thoughtful user experience, high-quality engineering practices, and scalable system design."
-      },
-      {
-        "title": "Developer Philosophy",
-        "content": "Build with clarity, ship with intention, and create interfaces that feel elegant while remaining practical and maintainable."
+        "content": "Focused on Backend Development, Java ecosystem technologies, Cloud Computing, and contributing to production-grade software engineering teams."
       }
     ]
   },
   "experience": {
     "eyebrow": "Experience",
-    "title": "A timeline shaped by building and shipping.",
-    "description": "A development journey centered on production-focused engineering, thoughtful interface design, and scalable implementation.",
+    "title": "Industry training and internship experience in production-focused development.",
+    "description": "A development journey centered on backend architecture, API integration, testing, debugging, deployment readiness, and collaborative version control workflows.",
     "timeline": [
       {
-        "title": "Full Stack Developer",
-        "company": "Independent Projects",
-        "duration": "2024 - Present",
-        "description": "Designing premium web experiences, API-driven platforms, and deployment-ready applications with a strong focus on responsive UI and maintainable architecture."
+        "title": "Software Developer Intern",
+        "company": "F.E.W. Solutions Pvt. Ltd.",
+        "duration": "July 2026 - Present",
+        "description": "Contributing to full-stack application development across frontend and backend modules. Supporting feature implementation, API integration, testing, debugging, and system enhancements while working with collaborative development workflows and version control."
       },
       {
-        "title": "Backend Engineer",
-        "company": "Scalable Web Systems",
-        "duration": "2023 - 2024",
-        "description": "Built REST APIs, data models, and operational backend workflows with Django, PostgreSQL, and clean modular service boundaries."
-      },
-      {
-        "title": "Frontend Developer",
-        "company": "Modern Product Interfaces",
-        "duration": "2022 - 2023",
-        "description": "Delivered polished component systems, motion-rich landing pages, and responsive dashboards centered around real product usability."
+        "title": "On-the-Job Trainee - Backend Developer",
+        "company": "F.E.W. Solutions Pvt. Ltd.",
+        "duration": "September 2025 - June 2026",
+        "description": "Developed REST APIs using Django REST Framework, designed and managed PostgreSQL databases, implemented authentication and role-based access control, worked on backend architecture for the Kho-Kho Scoring System, and assisted deployment and production-readiness activities."
       }
     ]
   },
   "projectsSection": {
     "eyebrow": "Projects",
-    "title": "Selected work designed for scale and polish.",
-    "description": "Every project is framed as a product experience, with attention to performance, architecture, and interface quality."
+    "title": "Production-oriented work across backend systems, finance tools, and AI learning.",
+    "description": "Selected projects built with practical architecture, database integration, authentication, responsive interfaces, and deployment awareness."
   },
   "projectsPage": {
     "eyebrow": "Projects Archive",
-    "title": "A broader look at the systems and interfaces I build.",
-    "description": "Explore the project catalog with a searchable view designed to highlight product thinking, technology choices, and implementation quality.",
+    "title": "A focused view of real project work from my resume.",
+    "description": "Search projects by title, description, or technology to review the systems, tools, and implementation areas behind each build.",
     "searchPlaceholder": "Search by title, description, or technology",
-    "featuredLabel": "Featured Case"
+    "featuredLabel": "Resume Project"
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let’s build something modern, scalable, and memorable.",
-    "description": "Reach out for full stack opportunities, product collaboration, or engineering work that needs both strong architecture and refined UI execution.",
+    "title": "Let us connect for internships, software roles, and backend development work.",
+    "description": "Available for internships, software development opportunities, backend development projects, and freelance work involving Java, Django, React.js, PostgreSQL, Firebase, or AWS.",
+    "availability": [
+      "Available for internships",
+      "Open to software development opportunities",
+      "Backend development projects",
+      "Freelance opportunities"
+    ],
     "links": [
-      { "label": "Email", "type": "email", "description": "Send an email inquiry" },
+      { "label": "Email", "type": "email", "description": "gauravkadam6026@gmail.com" },
       { "label": "GitHub", "type": "github", "description": "Open source work and repositories" },
-      { "label": "LinkedIn", "type": "linkedin", "description": "Professional experience and networking" }
+      { "label": "LinkedIn", "type": "linkedin", "description": "Professional profile and networking" }
     ]
   },
   "footer": {
-    "copyright": "Copyright © 2026. Crafted for a premium developer presence.",
-    "twitter": "https://twitter.com/gauravkadam"
+    "copyright": "Copyright 2026. Built for a professional software developer portfolio.",
+    "twitter": ""
   }
 }

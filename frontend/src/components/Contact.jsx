@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiEnvelope, HiLink, HiPaperAirplane } from "react-icons/hi2";
+import { HiBriefcase, HiEnvelope, HiLink, HiPaperAirplane } from "react-icons/hi2";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import { contactData, submitContactMessage } from "../services/api";
@@ -62,6 +62,19 @@ function Contact({ profile }) {
             title={contactData.title}
             description={contactData.description}
           />
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {contactData.availability.map((item) => (
+              <div
+                key={item}
+                className="glass-card flex items-center gap-3 rounded-[1.5rem] p-4"
+              >
+                <HiBriefcase className="shrink-0 text-xl text-accent" />
+                <span className="text-sm font-medium text-foreground/90">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
           <div className="mt-8 space-y-4">
             {contactData.links.map((link) => {
               const href =
@@ -77,6 +90,7 @@ function Contact({ profile }) {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={`Open ${link.label} contact option`}
                   className="glass-card flex items-center gap-4 rounded-[1.75rem] p-5"
                 >
                   {link.type === "email" ? (
@@ -109,10 +123,11 @@ function Contact({ profile }) {
               { name: "subject", label: "Subject", type: "text" },
             ].map((field) => (
               <label key={field.name} className="grid gap-2 text-sm">
-                <span className="uppercase tracking-[0.22em] text-muted">
+              <span className="uppercase tracking-[0.22em] text-muted">
                   {field.label}
                 </span>
                 <input
+                  aria-label={field.label}
                   required
                   name={field.name}
                   type={field.type}
@@ -125,6 +140,7 @@ function Contact({ profile }) {
             <label className="grid gap-2 text-sm">
               <span className="uppercase tracking-[0.22em] text-muted">Message</span>
               <textarea
+                aria-label="Message"
                 required
                 rows="6"
                 name="message"

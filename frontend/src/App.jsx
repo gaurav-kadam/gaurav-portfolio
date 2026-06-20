@@ -10,6 +10,7 @@ import { fadeInUp } from "./animations/scrollAnimations";
 
 const Home = lazy(() => import("./pages/Home"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const ResumePage = lazy(() => import("./pages/ResumePage"));
 
 
 function App() {
@@ -52,6 +53,10 @@ function App() {
             <Route
               path="/projects"
               element={<ProjectsPage onSectionChange={setActiveSection} />}
+            />
+            <Route
+              path="/resume"
+              element={<ResumePage onSectionChange={setActiveSection} />}
             />
           </Routes>
         </Suspense>

@@ -87,3 +87,27 @@ body {
     background-size: 38px 38px;
   }
 }
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  header,
+  footer,
+  .resume-print-area ~ *,
+  .resume-print-area button,
+  .resume-print-area a {
+    display: none !important;
+  }
+
+  .resume-print-area {
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .resume-print-area object {
+    min-height: 100vh;
+  }
+}

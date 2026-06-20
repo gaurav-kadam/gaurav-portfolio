@@ -1,5 +1,5 @@
 import { useEffect, useEffectEvent, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiBars3, HiMiniMoon, HiMiniSun, HiXMark } from "react-icons/hi2";
 import { navItems } from "../services/api";
@@ -8,6 +8,7 @@ import { navItems } from "../services/api";
 
 function Navbar({ activeSection, darkMode, onToggleTheme }) {
   const location = useLocation();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,6 +21,33 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
     window.addEventListener("scroll", syncScrollState);
     return () => window.removeEventListener("scroll", syncScrollState);
   }, []);
+
+  const focusContactForm = (attempt = 0) => {
+    window.setTimeout(() => {
+      const contactSection = document.getElementById("contact");
+      const firstField = contactSection?.querySelector("input, textarea, button");
+
+      if (!contactSection && attempt < 12) {
+        focusContactForm(attempt + 1);
+        return;
+      }
+
+      contactSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+      firstField?.focus({ preventScroll: true });
+    }, 120);
+  };
+
+  const handleHireMe = () => {
+    setOpen(false);
+
+    if (location.pathname !== "/") {
+      navigate("/#contact");
+      focusContactForm();
+      return;
+    }
+
+    focusContactForm();
+  };
 
   return (
     <header className="fixed inset-x-0 top-3 z-50 px-4 sm:px-6">
@@ -64,6 +92,14 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
         <div className="flex items-center gap-2">
           <button
             type="button"
+            className="button-primary hidden px-5 py-2.5 lg:inline-flex"
+            onClick={handleHireMe}
+            aria-label="Hire me and jump to the contact section"
+          >
+            Hire Me
+          </button>
+          <button
+            type="button"
             aria-label="Toggle dark mode"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5 text-lg"
             onClick={onToggleTheme}
@@ -101,6 +137,14 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
                     {item.label}
                   </a>
                 ))}
+                <button
+                  type="button"
+                  className="button-primary mt-2 w-full"
+                  onClick={handleHireMe}
+                  aria-label="Hire me and jump to the contact section"
+                >
+                  Hire Me
+                </button>
               </div>
             </div>
           </motion.div>

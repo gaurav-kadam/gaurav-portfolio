@@ -128,22 +128,26 @@ function ProjectsPage({ onSectionChange }) {
                     ))}
                   </div>
                   <div className="mt-6 flex flex-wrap gap-3">
-                    <a
-                      href={project.github_link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="button-secondary"
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      href={project.live_link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="button-primary"
-                    >
-                      Live Demo
-                    </a>
+                    {project.github_link ? (
+                      <a
+                        href={project.github_link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="button-secondary"
+                      >
+                        {project.github_label || "GitHub"}
+                      </a>
+                    ) : null}
+                    {project.live_link ? (
+                      <a
+                        href={project.live_link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="button-primary"
+                      >
+                        Live Demo
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </motion.article>

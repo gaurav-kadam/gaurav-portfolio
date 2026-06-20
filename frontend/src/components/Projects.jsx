@@ -78,24 +78,28 @@ function ProjectCard({ project, index }) {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={project.github_link}
-              className="button-secondary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-              <HiCodeBracket className="ml-2 text-base" />
-            </a>
-            <a
-              href={project.live_link}
-              className="button-primary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Live Demo
-              <HiArrowTopRightOnSquare className="ml-2 text-base" />
-            </a>
+            {project.github_link ? (
+              <a
+                href={project.github_link}
+                className="button-secondary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {project.github_label || "GitHub"}
+                <HiCodeBracket className="ml-2 text-base" />
+              </a>
+            ) : null}
+            {project.live_link ? (
+              <a
+                href={project.live_link}
+                className="button-primary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Demo
+                <HiArrowTopRightOnSquare className="ml-2 text-base" />
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

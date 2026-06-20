@@ -15,33 +15,39 @@ function Footer({ profile }) {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <a
-            href={profile?.github || "https://github.com/Gaurav Kadam"}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href={profile?.linkedin || "https://www.linkedin.com/in/gaurav-kadam6026-286b37283/"}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
-          <a
-            href={footerData.twitter}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"
-            aria-label="Twitter"
-          >
-            <FaXTwitter />
-          </a>
+          {profile?.github ? (
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          ) : null}
+          {profile?.linkedin ? (
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+          ) : null}
+          {footerData.twitter ? (
+            <a
+              href={footerData.twitter}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5"
+              aria-label="Twitter"
+            >
+              <FaXTwitter />
+            </a>
+          ) : null}
         </div>
       </div>
     </footer>
