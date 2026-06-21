@@ -1,3 +1,5 @@
+import emailjs from "@emailjs/browser";
+
 import data from "../data.json";
 
 export const fallbackProfile = data.profile;
@@ -41,10 +43,30 @@ export async function fetchSkills() {
 }
 
 export async function submitContactMessage(payload) {
-  // Contact form still uses backend if available, otherwise this is a stub.
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  if (!serviceId || !templateId || !publicKey) {
+    throw new Error("EmailJS configuration is missing.");
+  }
+
+  await emailjs.send(
+    serviceId,
+    templateId,
+    {
+      from_name: payload.name,
+      from_email: payload.email,
+      subject: payload.subject,
+      message: payload.message,
+    },
+    {
+      publicKey,
+    },
+  );
+
   return {
     success: true,
-    message: "Contact form submission is disabled in fallback mode.",
-    payload,
+    message: "Thank you for reaching out. Your message has been sent successfully.",
   };
 }
