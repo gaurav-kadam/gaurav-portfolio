@@ -4,7 +4,7 @@
     "title": "Software Developer | Backend Developer | Java & Django Developer",
     "bio": "Computer Science postgraduate student with hands-on experience in full-stack web and mobile application development using Django REST Framework, React.js, PostgreSQL, and AWS. Skilled in designing RESTful APIs, developing scalable backend systems, and managing relational and NoSQL databases. Strong foundation in Java, Python, C, and C++, with practical experience contributing to production-grade applications during industry training and internships. Passionate about Backend Development, Java Ecosystem technologies, Cloud Computing, and Software Engineering.",
     "profile_image": "",
-    "resume_file": "/Gaurav_Kadam_Resume.docx",
+    "resume_file": "/Gaurav_Kadam_Resume.pdf",
     "email": "gauravkadam6026@gmail.com",
     "github": "https://github.com/gaurav-kadam",
     "linkedin": "https://www.linkedin.com/in/gaurav-kadam-286b37283/"
@@ -71,23 +71,33 @@
     "items": [
       {
         "title": "Generative AI in Action",
-        "issuer": "IBM SkillsBuild"
+        "issuer": "IBM SkillsBuild",
+        "filePath": "/certificates/IBM Generative AI in Action.pdf",
+        "downloadName": "IBM_Generative_AI_in_Action.pdf"
       },
       {
         "title": "Artificial Intelligence Fundamentals",
-        "issuer": "IBM SkillsBuild"
+        "issuer": "IBM SkillsBuild",
+        "filePath": "/certificates/IBM_AI_Fundamentals.pdf",
+        "downloadName": "IBM_AI_Fundamentals.pdf"
       },
       {
         "title": "Generative AI Content Creation",
-        "issuer": "Adobe (Coursera)"
+        "issuer": "Adobe (Coursera)",
+        "filePath": "/certificates/Generative AI Content Creation.pdf",
+        "downloadName": "Generative_AI_Content_Creation.pdf"
       },
       {
         "title": "Project Management Fundamentals",
-        "issuer": "IBM SkillsBuild"
+        "issuer": "IBM SkillsBuild",
+        "filePath": "/certificates/IBM_Project_Management_Fundamentals.pdf",
+        "downloadName": "IBM_Project_Management_Fundamentals.pdf"
       },
       {
         "title": "Job Application Essentials",
-        "issuer": "IBM SkillsBuild"
+        "issuer": "IBM SkillsBuild",
+        "filePath": "/certificates/IBM_Job Application Essential.pdf",
+        "downloadName": "IBM_Job_Application_Essential.pdf"
       }
     ]
   },
@@ -95,11 +105,10 @@
     "items": [
       { "id": "home", "label": "Home", "href": "/#home" },
       { "id": "about", "label": "About", "href": "/#about" },
-      { "id": "skills", "label": "Skills", "href": "/#skills" },
-      { "id": "projects", "label": "Projects", "href": "/#projects" },
       { "id": "experience", "label": "Experience", "href": "/#experience" },
-      { "id": "certifications", "label": "Certifications", "href": "/#certifications" },
-      { "id": "contact", "label": "Contact", "href": "/#contact" }
+      { "id": "projects", "label": "Projects", "href": "/#projects" },
+      { "id": "contact", "label": "Contact", "href": "/#contact" },
+      { "id": "resume", "label": "Resume", "href": "/resume" }
     ]
   },
   "hero": {

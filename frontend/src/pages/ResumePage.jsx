@@ -6,6 +6,7 @@ import {
   HiArrowLeft,
   HiDocumentText,
   HiPrinter,
+  HiSparkles,
 } from "react-icons/hi2";
 
 import Footer from "../components/Footer";
@@ -18,16 +19,18 @@ function ResumePage({ onSectionChange }) {
     onSectionChange?.("resume");
   }, [onSectionChange]);
 
-  const resumeUrl =
-    typeof window === "undefined"
-      ? resumeData.file
-      : new URL(resumeData.file, window.location.origin).href;
-  const officeViewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(
-    resumeUrl,
-  )}`;
-
   const handlePrint = () => {
-    window.print();
+    const printWindow = window.open(resumeData.file, "_blank");
+
+    if (!printWindow) {
+      window.print();
+      return;
+    }
+
+    printWindow.addEventListener("load", () => {
+      printWindow.focus();
+      printWindow.print();
+    });
   };
 
   return (
@@ -45,13 +48,12 @@ function ResumePage({ onSectionChange }) {
           >
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <span className="pill">Resume Viewer</span>
+                <span className="pill">Resume</span>
                 <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-                  Gaurav Ravindra Kadam
+                  Resume
                 </h1>
                 <p className="body-copy mt-4 max-w-2xl">
-                  Review the latest resume, then download or print a copy for
-                  hiring and interview workflows.
+                  View, download, or print my latest professional resume.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -87,6 +89,25 @@ function ResumePage({ onSectionChange }) {
           </motion.div>
 
           <motion.div
+            className="glass-card rounded-[2.5rem] p-6 sm:p-8"
+            variants={fadeInUp}
+          >
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/20 bg-white/5 text-xl text-accent">
+                <HiSparkles />
+              </span>
+              <h2 className="font-display text-2xl font-semibold">Highlights</h2>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {resumeData.highlights.map((highlight) => (
+                <span key={highlight} className="pill">
+                  {highlight}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
             className="glass-card resume-print-area overflow-hidden rounded-[2.5rem] p-4 sm:p-6"
             variants={fadeInUp}
           >
@@ -104,21 +125,20 @@ function ResumePage({ onSectionChange }) {
                   </p>
                 </div>
               </div>
-              <span className="pill w-fit">DOCX</span>
+              <span className="pill w-fit">PDF</span>
             </div>
 
-            <div className="min-h-[680px] overflow-hidden rounded-[1.75rem] border border-border/20 bg-white text-slate-950">
+            <div className="min-h-[72vh] overflow-hidden rounded-[1.75rem] border border-border/20 bg-white text-slate-950">
               <iframe
-                src={officeViewerUrl}
+                src={`${resumeData.file}#view=FitH`}
                 title={resumeData.title}
-                className="h-[680px] w-full"
-                aria-label="Embedded resume document preview"
+                className="h-[72vh] min-h-[560px] w-full"
+                aria-label="Embedded PDF resume preview"
               />
             </div>
             <div className="mt-4 rounded-[1.5rem] border border-border/15 bg-white/5 p-4 text-sm text-muted">
-              If the preview does not load in local development, use Download
-              Resume to open the DOCX file. The embedded viewer works when the
-              portfolio is hosted at a public URL.
+              If the PDF preview is blocked by a browser setting, use Download
+              Resume to open the file directly.
             </div>
           </motion.div>
         </motion.div>

@@ -70,21 +70,33 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
             const isActive =
               location.pathname === "/projects"
                 ? item.id === "projects"
+                : location.pathname === "/resume"
+                ? item.id === "resume"
                 : activeSection === item.id;
+            const linkClassName =
+              "group relative rounded-full px-4 py-2 text-sm font-medium text-foreground/85 transition hover:text-foreground";
+            const underline = (
+              <span
+                className={`absolute inset-x-4 bottom-1 h-px origin-left bg-gradient-to-r from-accent to-secondary transition-transform duration-300 ${
+                  isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                }`}
+              />
+            );
 
-            return (
+            return item.href.startsWith("/#") ? (
               <a
                 key={item.id}
                 href={item.href}
-                className="group relative rounded-full px-4 py-2 text-sm font-medium text-foreground/85 transition hover:text-foreground"
+                className={linkClassName}
               >
                 {item.label}
-                <span
-                  className={`absolute inset-x-4 bottom-1 h-px origin-left bg-gradient-to-r from-accent to-secondary transition-transform duration-300 ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
+                {underline}
               </a>
+            ) : (
+              <Link key={item.id} to={item.href} className={linkClassName}>
+                {item.label}
+                {underline}
+              </Link>
             );
           })}
         </div>
@@ -127,16 +139,27 @@ function Navbar({ activeSection, darkMode, onToggleTheme }) {
           >
             <div className="glass-card mt-3 rounded-[2rem] p-4">
               <div className="grid gap-2">
-                {navItems.map((item) => (
-                  <a
-                    key={item.id}
-                    href={item.href}
-                    className="rounded-2xl px-4 py-3 text-sm font-medium text-foreground/85 transition hover:bg-white/5 hover:text-foreground"
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
+                {navItems.map((item) =>
+                  item.href.startsWith("/#") ? (
+                    <a
+                      key={item.id}
+                      href={item.href}
+                      className="rounded-2xl px-4 py-3 text-sm font-medium text-foreground/85 transition hover:bg-white/5 hover:text-foreground"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.id}
+                      to={item.href}
+                      className="rounded-2xl px-4 py-3 text-sm font-medium text-foreground/85 transition hover:bg-white/5 hover:text-foreground"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ),
+                )}
                 <button
                   type="button"
                   className="button-primary mt-2 w-full"

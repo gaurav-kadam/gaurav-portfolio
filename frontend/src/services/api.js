@@ -16,7 +16,16 @@ export const resumeData = {
   file: data.profile.resume_file,
   title: "Gaurav Ravindra Kadam Resume",
   viewerPath: "/resume",
-  downloadName: "Gaurav_Ravindra_Kadam_Resume.docx",
+  downloadName: "Gaurav_Ravindra_Kadam_Resume.pdf",
+  highlights: [
+    "Software Developer Intern",
+    "Backend Developer OJT",
+    "Django REST Framework",
+    "React.js",
+    "PostgreSQL",
+    "AWS",
+    "Full Stack Development",
+  ],
 };
 
 export async function fetchProfile() {

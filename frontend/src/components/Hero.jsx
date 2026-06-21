@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { HiArrowRight, HiDocumentText } from "react-icons/hi2";
 
+import gauravProfileImage from "../assets/images/gaurav-kadam.png";
 import profilePlaceholder from "../assets/images/profile-placeholder.svg";
 import { heroData, resumeData } from "../services/api";
 import {
@@ -20,6 +21,7 @@ function Hero({ profile }) {
   const y = useTransform(scrollY, [0, 500], [0, 110]);
   const [techIndex, setTechIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
+  const [heroImageSrc, setHeroImageSrc] = useState(gauravProfileImage);
 
   useEffect(() => {
     const currentWord = technologies[techIndex];
@@ -141,9 +143,15 @@ function Hero({ profile }) {
                 transition={{ repeat: Number.POSITIVE_INFINITY, duration: 6 }}
               />
               <img
-                src={profile.profile_image || profilePlaceholder}
-                alt={profile.name}
-                className="relative z-10 mx-auto w-full max-w-md rounded-[2rem] object-cover shadow-glow"
+                src={heroImageSrc}
+                alt="Gaurav Kadam - Software Developer"
+                width="520"
+                height="640"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="relative z-10 mx-auto aspect-[4/5] w-full max-w-md rounded-[2rem] object-cover object-center shadow-glow"
+                onError={() => setHeroImageSrc(profilePlaceholder)}
               />
               <motion.div
                 className="glass-card absolute -bottom-4 right-4 z-20 rounded-[1.5rem] px-5 py-4"
